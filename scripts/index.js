@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       emailjs
-        .send("service_0ow1spe", "template_869dery", formData)
+        .send("service_u9h1x9b", "template_lojlrtw", formData)
         .then(() => {
           document.getElementById("form-message").textContent =
             "Mensagem enviada com sucesso!";
