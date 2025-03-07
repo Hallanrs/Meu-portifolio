@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       emailjs
         .send("service_u9h1x9b", "template_lojlrtw", formData)
         .then(() => {
-          document.getElementById("form-message").textContent =
+          document.getElementById("form-message").innerText =
             "Mensagem enviada com sucesso!";
           form.reset();
         })
