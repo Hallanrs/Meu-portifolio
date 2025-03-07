@@ -4,6 +4,7 @@ header {
     align-items: center;
     gap: 4rem;
     scroll-margin-top: 20rem;
+    border-top: 2px solid black;
   }
   
   header .header__left {

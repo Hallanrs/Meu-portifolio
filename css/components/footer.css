@@ -22,3 +22,47 @@ footer {
     padding: 1rem;
   }
   
+  #contact {
+    background: rgba(124, 116, 116, 0);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+  }
+  
+  #contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #contact-form label {
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #242121;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid hsl(0, 0%, 20%);
+    border-radius: 5px;
+    background: rgba(124, 116, 116, 0);
+    color: black;
+    width: 100%;
+  }
+  
+  #contact-form button {
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  
+  #form-message {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
