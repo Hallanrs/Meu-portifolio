@@ -65,4 +65,12 @@ footer {
     margin-top: 10px;
     font-weight: bold;
   }
+
+  .footer__content ul li a img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer__content ul li a:hover img {
+    transform: scale(1.1);
+}
   
