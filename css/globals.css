@@ -98,6 +98,60 @@
   .mb-xl {
     margin-bottom: 6rem;
   }
+
+/* Projetos*/
+
+.projeto-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  background-color: #fff;
+  margin-top: 100px;
+}
+
+.projeto-card:hover {
+  transform: scale(1.03);
+}
+
+.projeto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.projeto-conteudo {
+  padding: 16px;
+  text-align: center;
+}
+
+.projeto-conteudo h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.projeto-conteudo p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.btn-saiba-mais {
+  text-decoration: none;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.btn-saiba-mais:hover {
+  background-color: #0056b3;
+}
+  
   
   @media only screen and (max-width: 1024px) {
     html {
