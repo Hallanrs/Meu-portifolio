@@ -7,3 +7,102 @@
 @import './components/skills.css';
 @import './components/projects.css';
 @import './components/footer.css';
+
+/* ==== POLISH DE CORES & CONTRASTE ==== */
+
+/* paleta levemente mais neutra */
+:root{
+  --primary-color:#0f172a;      /* títulos escuros (para áreas claras) */
+  --secondary-color:#cbd5e1;    /* texto secundário claro em dark */
+  --accent:#2563eb;
+  --accent-700:#1d4ed8;
+  --bg:#0b1020;
+  --bg-2:#0e1326;
+  --surface:#0d1530;            /* cards */
+  --surface-2:#0b1226;          /* hover */
+  --muted:#a8b3c7;              /* texto */
+  --white:#ffffff;
+}
+
+/* tipografia global mais legível em dark */
+h1, .secondary-title, .tertiary-title { color: var(--white); }
+p, .p, .lead { color: var(--muted); }
+
+/* navbar links mais claros */
+.navbar__links a{ color:#e5edf7; }
+.navbar__links a:hover{ background:rgba(229,237,247,.08); }
+
+/* ====== HERO / ABOUT (sem alteração de bg) ====== */
+
+/* ====== SKILLS: deixa a seção escura p/ combinar com os títulos claros ====== */
+.skills{
+  background: linear-gradient(180deg, #0b1224 0%, #0a0f1f 100%);
+  border-top: 1px solid rgba(148,163,184,.12);
+  border-bottom: 1px solid rgba(148,163,184,.12);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* cards com contraste melhor e texto mais claro */
+.skills__item{
+  background: var(--surface);
+  border: 1px solid rgba(148,163,184,.18);
+}
+.skills__item:hover{
+  border-color: rgba(148,163,184,.35);
+  background: var(--surface-2);
+}
+.skills__item h3{ color:#eef3fb; }
+.skills__item p{ color:#cfd9ea; }
+.badge{
+  border-color: rgba(207,217,234,.35);
+  color: #e6eefc;
+}
+
+/* ====== PROJECTS: equaliza o tom dos cards ====== */
+.projeto-card{
+  background: var(--surface);
+  border: 1px solid rgba(148,163,184,.18);
+}
+.projeto-card:hover{
+  border-color: rgba(148,163,184,.35);
+  box-shadow: 0 12px 40px rgba(2,6,23,.35);
+}
+.projeto-conteudo h3{ color:#eef3fb; }
+.projeto-conteudo p{ color:#cfd9ea; }
+
+/* botões coerentes */
+.btn-primary, .btn-saiba-mais{ background: var(--accent); }
+.btn-primary:hover, .btn-saiba-mais:hover{ background: var(--accent-700); }
+
+/* footer contraste */
+label{ color:#e6eefc; }
+input, textarea{
+  background:#0c142c; color:#e6eefc;
+  border:1px solid rgba(148,163,184,.25);
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width:1024px){
+  .skills{ padding-top: 4rem; padding-bottom: 4rem; }
+}
+
+/* ===== Botão de idioma EN/PT ===== */
+.lang-toggle {
+  margin-left: 1rem;
+  border: 1px solid currentColor;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
+.lang-toggle:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.lang-toggle:hover {
+    background-color: rgba (255, 255, 255, 0.1);
+}
