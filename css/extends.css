@@ -106,3 +106,55 @@ input, textarea{
 .lang-toggle:hover {
     background-color: rgba (255, 255, 255, 0.1);
 }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 16, 32, 0.85),
+    rgba(11, 16, 32, 0.60)
+  ); /* usa --bg como base */
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+/* Deixa mais sólida quando a página rolar */
+.navbar.is-stuck {
+  background: rgba(11, 16, 32, 0.95);
+  border-bottom-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 6px 24px rgba(2, 6, 23, 0.35);
+}
+
+/* Marca/links coerentes com a paleta do resto do site */
+.navbar .brand h2 { color: #eaf1fb; }
+.navbar .brand h2 span { color: var(--accent); }
+
+.navbar__links a {
+  color: #eaf1fb;
+  border-radius: 8px;
+  padding: .5rem .75rem;
+}
+.navbar__links a:hover,
+.mobile__links a:hover {
+  background: rgba(229, 237, 247, 0.08);
+}
+
+/* Menu mobile com o mesmo tema da barra */
+.mobile__links {
+  background: rgba(11, 16, 32, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 12px 32px rgba(2, 6, 23, 0.45);
+}
+
+/* Botão EN/PT: corrige hover e deixa no mesmo estilo */
+.lang-toggle {
+  color: #eaf1fb;
+  border-color: rgba(148,163,184,.35);
+}
+.lang-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.06); /* <-- sem espaço em rgba */
+}
+.lang-toggle:focus { outline-color: var(--accent); }

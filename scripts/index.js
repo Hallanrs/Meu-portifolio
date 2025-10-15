@@ -78,3 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (y) y.textContent = new Date().getFullYear();
 });
    
+//rolagem clear
+ const nav = document.querySelector('.navbar');
+  const onScroll = () => {
+    if (window.scrollY > 8) nav.classList.add('is-stuck');
+    else nav.classList.remove('is-stuck');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
