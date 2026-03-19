@@ -1,59 +1,68 @@
+/* ============================================================
+   ABOUT
+   ============================================================ */
+
 .about {
-    display: flex;
-    justify-content: space-between;
+  padding: 10rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Left column */
+.about__left .secondary-title { margin-bottom: 0.8rem; }
+.about__left p + p { margin-top: 1.6rem; }
+
+.about__bullets {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.about__bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.6rem;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+.about__bullets li::before {
+  content: "→";
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Right column — sticky card */
+.highlight {
+  position: sticky;
+  top: 10rem;
+}
+.highlight .tertiary-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.highlight .tertiary-title::before {
+  content: '';
+  width: 4px;
+  height: 2.2rem;
+  background: var(--accent);
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .about {
+    grid-template-columns: 1fr;
+    padding: 8rem 0;
     gap: 4rem;
-    scroll-margin-top: 20rem;
   }
-  
-  .about .about__left {
-    max-width: 40rem;
-    flex: 1;
-  }
-  
-  .about .about__left p {
-    margin: 1rem 0 2rem;
-  }
-  
-  .about .about__left ul {
-    margin-left: -1.2rem;
-  }
-  
-  .about .about__left ul li {
-    display: inline-block;
-  }
-  
-  .about .about__left ul li a {
-    display: inline-block;
-    padding: 1rem;
-  }
-
-  .about .about__left ul li a img {
-    transition: transform 0.3s ease-in-out;
+  .highlight { position: static; }
 }
-
-.about .about__left ul li a:hover img {
-    transform: scale(1.1);
+@media (max-width: 768px) {
+  .about { padding: 6rem 0; }
 }
-  
-  .about .about__right {
-    flex: 1;
-    max-width: 66rem;
-  }
-
-
-  
-  @media only screen and (max-width: 768px) {
-    .about {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .about .about__left {
-      max-width: 66rem;
-      text-align: center;
-    }
-  
-    .about .about__right {
-      text-align: center;
-    }
-  }
