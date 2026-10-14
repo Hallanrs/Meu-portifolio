@@ -8,9 +8,8 @@
   --text: #18181b;
   --muted: #6b6b73;
   --border: #e7e7ea;
-  --accent: #2563eb;
-  --accent-2: #7c3aed;
-  --grad: linear-gradient(90deg, var(--accent), var(--accent-2));
+  --accent: #18181b;
+  --grad: var(--accent);
   --shadow: 0 12px 32px -12px rgba(24, 24, 27, .18);
 
   --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -29,8 +28,7 @@
     --text: #ececee;
     --muted: #9a9aa3;
     --border: #26262c;
-    --accent: #6d9bff;
-    --accent-2: #a78bfa;
+    --accent: #fafafa;
     --shadow: 0 12px 32px -12px rgba(0, 0, 0, .6);
   }
 }
@@ -118,7 +116,7 @@ h1, h2, h3 { line-height: 1.25; font-weight: 600; }
 .btn:active { transform: translateY(0); }
 
 .btn--primary {
-  color: #fff;
+  color: var(--bg);
   background: var(--grad);
   border: 0;
   background-size: 200% 100%;
@@ -254,8 +252,8 @@ h1, h2, h3 { line-height: 1.25; font-weight: 600; }
   width: 640px;
   height: 640px;
   background:
-    radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
-    radial-gradient(closest-side at 30% 70%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 70%);
+    radial-gradient(closest-side, color-mix(in srgb, var(--text) 7%, transparent), transparent 70%),
+    radial-gradient(closest-side at 30% 70%, color-mix(in srgb, var(--text) 5%, transparent), transparent 70%);
   filter: blur(20px);
   pointer-events: none;
   animation: float 14s ease-in-out infinite alternate;
