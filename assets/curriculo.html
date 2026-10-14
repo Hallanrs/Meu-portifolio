@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Currículo — Hallan Rauber Sbardelatti</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 11mm 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-size: 9.1pt;
+    line-height: 1.38;
+    color: #1f2937;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+
+  header { padding-bottom: 8px; border-bottom: 2px solid #2563eb; margin-bottom: 9px; }
+  h1 { font-size: 21pt; font-weight: 700; letter-spacing: -0.02em; color: #111827; }
+  .role { font-size: 10.5pt; font-weight: 500; color: #2563eb; margin: 2px 0 8px; }
+  .contact { display: flex; flex-wrap: wrap; gap: 2px 16px; font-size: 8.6pt; color: #4b5563; }
+  .contact b { font-weight: 600; color: #111827; }
+
+  section { margin-bottom: 8px; }
+  h2 {
+    font-size: 8.6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #2563eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+  }
+
+  p { color: #374151; }
+
+  .item { margin-bottom: 6px; break-inside: avoid; }
+  .item__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .item h3 { font-size: 10pt; font-weight: 600; color: #111827; }
+  .item h3 span { font-weight: 400; color: #4b5563; }
+  .date { font-size: 8.6pt; color: #6b7280; white-space: nowrap; }
+  .item ul { margin-top: 3px; }
+  .item li { position: relative; padding-left: 12px; color: #374151; }
+  .item li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 4px; height: 4px; border-radius: 50%; background: #2563eb; }
+  .stack { font-size: 8.4pt; color: #6b7280; margin-top: 2px; }
+  .link { font-size: 8.4pt; color: #2563eb; }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; } .skill--wide { grid-column: 1 / -1; }
+  .skill b { font-weight: 600; color: #111827; }
+  .skill .lvl { font-size: 8pt; font-weight: 500; color: #2563eb; background: #eff6ff; border-radius: 3px; padding: 0 5px; margin-left: 4px; }
+  .skill div { color: #4b5563; font-size: 8.8pt; }
+
+  .two { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Hallan Rauber Sbardelatti</h1>
+  <div class="role">Python · Suporte Técnico N1/N2 · DevOps · Análise de Dados</div>
+  <div class="contact">
+    <span>Rua Expedicionário Ervino Raasch — Rau, Jaraguá do Sul/SC — CEP 89254-270</span>
+    <span><b>Tel.</b> +55 (47) 99783-0693</span>
+    <span><b>E-mail</b> <a href="mailto:hallansbardelatti@gmail.com">hallansbardelatti@gmail.com</a></span>
+    <span><b>LinkedIn</b> <a href="https://www.linkedin.com/in/hallan-rauber-sbardelatti-2aa631304/">linkedin.com/in/hallan-rauber-sbardelatti-2aa631304</a></span>
+    <span><b>GitHub</b> <a href="https://github.com/Hallanrs">github.com/Hallanrs</a></span>
+    <span><b>Portfólio</b> <a href="https://hallanrs.github.io/Meu-portifolio/">hallanrs.github.io/Meu-portifolio</a></span>
+  </div>
+</header>
+
+<section>
+  <h2>Resumo</h2>
+  <p>
+    Profissional de tecnologia com experiência intermediária em Python, aplicada em automação de tarefas,
+    APIs REST e tratamento de dados. Atuo no suporte técnico resolvendo chamados de N1 e parte de N2, com
+    diagnóstico e triagem de incidentes. Construindo base em DevOps (Linux, Git, Docker, CI/CD) e análise de dados
+    (SQL, pandas). Estudante de Engenharia de Software, com foco em unir suporte, automação e infraestrutura.
+  </p>
+</section>
+
+<section>
+  <h2>Experiência profissional</h2>
+
+  <div class="item">
+    <div class="item__head">
+      <h3>UpFlux <span>— Suporte Técnico N1/N2 · Python</span></h3>
+      <span class="date">Atual</span>
+    </div>
+    <ul>
+      <li>Atendimento de primeiro nível a usuários, com diagnóstico e triagem de incidentes; resolução de parte dos casos de segundo nível.</li>
+      <li>Abertura e gestão de chamados, análise de logs e escalonamento para o time técnico com contexto documentado.</li>
+      <li>Desenvolvimento de scripts em Python para automação de tarefas recorrentes e tratamento de dados.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item__head">
+      <h3>Ferber Automações <span>— Desenvolvedor (Python, MySQL, Web)</span></h3>
+      <span class="date">6 meses</span>
+    </div>
+    <ul>
+      <li>Desenvolvimento e manutenção de sistemas internos com Python e MySQL, voltados à automação de processos da empresa.</li>
+      <li>Criação e estilização de interfaces web com HTML, CSS e JavaScript, incluindo o site institucional da empresa.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Projetos</h2>
+
+  <div class="item">
+    <div class="item__head">
+      <h3>API de Pedidos <span>— FastAPI</span></h3>
+      <a class="link" href="https://github.com/Hallanrs/FastApi">github.com/Hallanrs/FastApi</a>
+    </div>
+    <p>API REST com cadastro de usuários e senhas criptografadas (bcrypt), rotas modulares, sessão de banco injetada via dependências e migrações versionadas.</p>
+    <div class="stack">FastAPI · SQLAlchemy · Alembic · SQLite · Pydantic</div>
+  </div>
+
+  <div class="item">
+    <div class="item__head">
+      <h3>App Gym <span>— Flutter</span></h3>
+      <a class="link" href="https://github.com/Hallanrs/AppGym">github.com/Hallanrs/AppGym</a>
+    </div>
+    <p>App multiplataforma de treinos com login, catálogo de exercícios por grupo muscular, registro de sessões e gráficos de evolução.</p>
+    <div class="stack">Flutter · Dart · Provider · fl_chart</div>
+  </div>
+
+  <div class="item">
+    <div class="item__head">
+      <h3>Site Ferber Automação</h3>
+      <a class="link" href="https://www.ferberautomacao.com.br">ferberautomacao.com.br</a>
+    </div>
+    <p>Site institucional responsivo desenvolvido do zero.</p>
+    <div class="stack">HTML · CSS · JavaScript</div>
+  </div>
+</section>
+
+<section>
+  <h2>Competências</h2>
+  <div class="skills">
+    <div class="skill"><b>Python</b><span class="lvl">Intermediário</span>
+      <div>Automação, APIs REST (FastAPI), pandas, requests</div></div>
+    <div class="skill"><b>Suporte Técnico</b><span class="lvl">N1 · base N2</span>
+      <div>Chamados, diagnóstico, logs, Windows, Linux, redes (básico)</div></div>
+    <div class="skill"><b>DevOps</b><span class="lvl">Base</span>
+      <div>Linux, Git, Docker, CI/CD</div></div>
+    <div class="skill"><b>Análise de Dados</b><span class="lvl">Base</span>
+      <div>SQL, pandas, Excel</div></div>
+    <div class="skill skill--wide"><b>Outras</b>
+      <div>JavaScript, HTML/CSS, C#, C++, Dart/Flutter, MySQL, MongoDB</div></div>
+  </div>
+</section>
+
+<div class="two">
+  <section>
+    <h2>Formação</h2>
+    <div class="item">
+      <div class="item__head">
+        <h3>Engenharia de Software</h3>
+        <span class="date">Conclusão prevista: fim de 2027</span>
+      </div>
+      <p>Católica de Santa Catarina — Jaraguá do Sul · 6º de 8 semestres</p>
+    </div>
+    <div class="item">
+      <div class="item__head">
+        <h3>Ensino Médio</h3>
+        <span class="date">2021 – 2023</span>
+      </div>
+      <p>Colégio Marista São Luís</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Idiomas</h2>
+    <p><b>Português</b> — nativo</p>
+    <p><b>Inglês</b> — intermediário</p>
+  </section>
+</div>
+
+</body>
+</html>
