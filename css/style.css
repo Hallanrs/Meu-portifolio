@@ -476,6 +476,61 @@ h1, h2, h3 { line-height: 1.25; font-weight: 600; }
 .chips li:hover { transform: translateY(-3px); border-color: var(--accent); color: var(--accent); }
 
 /* ===== Projetos ===== */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.project-list .project,
+.project-list .more { grid-column: 1 / -1; }
+
+.repo {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+.repo:hover {
+  translate: 0 -6px;
+  border-color: color-mix(in srgb, var(--c) 55%, var(--border));
+  box-shadow: var(--shadow);
+}
+.repo:hover .skill__icon { transform: rotate(-8deg) scale(1.08); }
+.repo .skill__icon { font-size: 11px; letter-spacing: .02em; }
+
+.repo__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.repo h3 { font-size: 17px; }
+.repo__path { font: 12px var(--mono); color: var(--muted); }
+.repo__lang {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.lang-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+.repo p:not(.tools) { font-size: 15px; color: var(--muted); }
+.repo .tools { margin: 12px 0 16px; }
+.repo .link { margin-top: auto; display: inline-block; transition: transform .25s var(--ease); }
+.repo:hover .link { transform: translateX(4px); }
+
+.more {
+  justify-self: start;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color .2s;
+}
+.more:hover { color: var(--accent); }
+
 .project {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -627,6 +682,7 @@ h1, h2, h3 { line-height: 1.25; font-weight: 600; }
   .section__label { position: static; }
 
   .project { grid-template-columns: 1fr; gap: 18px; }
+  .project-list { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
 }
 

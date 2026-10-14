@@ -64,6 +64,7 @@
             <div class="hero__actions reveal" style="--d: 3">
               <a href="assets/curriculo.pdf" class="btn btn--primary" download data-i18n="hero.cv">Baixar currículo</a>
               <a href="https://www.linkedin.com/in/hallan-rauber-sbardelatti-2aa631304/" class="btn" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://github.com/Hallanrs" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
           </div>
           <div class="hero__photo-wrap reveal" style="--d: 2">
@@ -153,7 +154,36 @@
       <!-- ===== Projetos ===== -->
       <section id="projects" class="container section">
         <h2 class="section__label reveal"><span class="num">03</span><span data-i18n="projects.title">Projetos</span></h2>
-        <div class="section__body">
+        <div class="section__body project-list">
+
+          <a href="https://github.com/Hallanrs/FastApi" class="card repo reveal" style="--c: #10b981" target="_blank" rel="noopener">
+            <div class="repo__head">
+              <span class="skill__icon" aria-hidden="true">API</span>
+              <div>
+                <h3>API de Pedidos</h3>
+                <span class="repo__path">Hallanrs/FastApi</span>
+              </div>
+              <span class="repo__lang"><span class="lang-dot" style="background: #3572A5"></span>Python</span>
+            </div>
+            <p data-i18n="projects.p2.text">API REST de pedidos com cadastro de usuários e senhas criptografadas com bcrypt, rotas separadas por módulo, sessão de banco injetada via dependências e migrações versionadas com Alembic.</p>
+            <p class="tools">FastAPI · SQLAlchemy · Alembic · SQLite · bcrypt · Pydantic</p>
+            <span class="link" data-i18n="projects.github">Ver no GitHub ↗</span>
+          </a>
+
+          <a href="https://github.com/Hallanrs/AppGym" class="card repo reveal" style="--d: 1; --c: #f59e0b" target="_blank" rel="noopener">
+            <div class="repo__head">
+              <span class="skill__icon" aria-hidden="true">GYM</span>
+              <div>
+                <h3>App Gym</h3>
+                <span class="repo__path">Hallanrs/AppGym</span>
+              </div>
+              <span class="repo__lang"><span class="lang-dot" style="background: #00B4AB"></span>Dart</span>
+            </div>
+            <p data-i18n="projects.p3.text">App multiplataforma de treinos: login e cadastro, catálogo de exercícios por grupo muscular, registro de sessões, resumo com gráficos de evolução e tema claro/escuro.</p>
+            <p class="tools">Flutter · Dart · Provider · fl_chart · shared_preferences</p>
+            <span class="link" data-i18n="projects.github">Ver no GitHub ↗</span>
+          </a>
+
           <a href="https://www.ferberautomacao.com.br" class="card project reveal" target="_blank" rel="noopener">
             <div class="project__img">
               <img src="assets/SiteFerber.jpeg" alt="Página inicial do site Ferber Automação" loading="lazy" data-i18n-attr-alt="projects.p1.alt" />
@@ -165,6 +195,8 @@
               <span class="link" data-i18n="projects.visit">Ver site ↗</span>
             </div>
           </a>
+
+          <a href="https://github.com/Hallanrs" class="more reveal" target="_blank" rel="noopener" data-i18n="projects.more">Mais projetos no GitHub ↗</a>
         </div>
       </section>
 
@@ -173,8 +205,8 @@
         <h2 class="section__label reveal"><span class="num">04</span><span data-i18n="edu.title">Formação</span></h2>
         <div class="section__body">
           <div class="card edu reveal">
-            <h3 data-i18n="edu.course">Engenharia de Software 6/8</h3>
-            <span class="status"><span class="dot"></span><span data-i18n="edu.status">Em andamento</span></span>
+            <h3 data-i18n="edu.course">Engenharia de Software</h3>
+            <span class="status"><span class="dot"></span><span data-i18n="edu.status">Em andamento · 6º de 8 semestres</span></span>
           </div>
         </div>
       </section>
@@ -187,6 +219,7 @@
             <li><span class="muted">E-mail</span><a href="mailto:hallansbardelatti@gmail.com">hallansbardelatti@gmail.com</a></li>
             <li><span class="muted" data-i18n="contact.phone">Telefone</span><a href="tel:+554797830693">+55 (47) 9783-0693</a></li>
             <li><span class="muted">LinkedIn</span><a href="https://www.linkedin.com/in/hallan-rauber-sbardelatti-2aa631304/" target="_blank" rel="noopener">hallan-rauber-sbardelatti ↗</a></li>
+            <li><span class="muted">GitHub</span><a href="https://github.com/Hallanrs" target="_blank" rel="noopener">Hallanrs ↗</a></li>
           </ul>
 
           <form id="contact-form" class="card form reveal" style="--d: 1" novalidate>

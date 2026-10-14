@@ -39,10 +39,16 @@ const I18N = {
     "projects.p1.alt": "Página inicial do site Ferber Automação",
     "projects.p1.text": "Site institucional desenvolvido do zero, com layout responsivo.",
     "projects.visit": "Ver site ↗",
+    "projects.p2.text":
+      "API REST de pedidos com cadastro de usuários e senhas criptografadas com bcrypt, rotas separadas por módulo, sessão de banco injetada via dependências e migrações versionadas com Alembic.",
+    "projects.p3.text":
+      "App multiplataforma de treinos: login e cadastro, catálogo de exercícios por grupo muscular, registro de sessões, resumo com gráficos de evolução e tema claro/escuro.",
+    "projects.github": "Ver no GitHub ↗",
+    "projects.more": "Mais projetos no GitHub ↗",
 
     "edu.title": "Formação",
     "edu.course": "Engenharia de Software",
-    "edu.status": "Em andamento",
+    "edu.status": "Em andamento · 6º de 8 semestres",
 
     "contact.title": "Contato",
     "contact.phone": "Telefone",
@@ -98,10 +104,16 @@ const I18N = {
     "projects.p1.alt": "Homepage of the Ferber Automação website",
     "projects.p1.text": "Institutional website built from scratch with a responsive layout.",
     "projects.visit": "View site ↗",
+    "projects.p2.text":
+      "Orders REST API with user sign-up and bcrypt-hashed passwords, modular routers, database session injected through dependencies and versioned migrations with Alembic.",
+    "projects.p3.text":
+      "Cross-platform workout app: login and sign-up, exercise catalog by muscle group, session logging, progress summary with charts and light/dark theme.",
+    "projects.github": "View on GitHub ↗",
+    "projects.more": "More projects on GitHub ↗",
 
     "edu.title": "Education",
     "edu.course": "Software Engineering",
-    "edu.status": "In progress",
+    "edu.status": "In progress · semester 6 of 8",
 
     "contact.title": "Contact",
     "contact.phone": "Phone",
