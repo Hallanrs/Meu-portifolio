@@ -1,306 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <!-- Meta -->
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="Portfólio de Hallan Rauber Sbardelatti — Desenvolvedor Front-end. Projetos, habilidades e contato." />
-    <title>Hallan Portfólio — Desenvolvedor Front-end</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Hallan Rauber Sbardelatti — Python, Suporte Técnico (N1/N2), DevOps e Análise de Dados." />
+    <title>Hallan Sbardelatti — Python · Suporte · DevOps</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.png" />
-
-    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/extends.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
 
     <!-- ===== Navbar ===== -->
     <nav class="navbar" aria-label="Menu principal">
-      <div class="navbar__content max-width mb-0">
-
-        <a href="#header" class="brand" aria-label="Voltar ao início">
-          <h2>Hallan<span>R.S</span></h2>
-        </a>
+      <div class="progress" aria-hidden="true"></div>
+      <div class="container navbar__content">
+        <a href="#top" class="brand">Hallan<span>.</span></a>
 
         <ul class="navbar__links">
-          <li><a href="#header"   data-i18n="nav.home">Início</a></li>
           <li><a href="#about"    data-i18n="nav.about">Sobre</a></li>
-          <li><a href="#skills"   data-i18n="nav.skills">Habilidades</a></li>
+          <li><a href="#skills"   data-i18n="nav.skills">Competências</a></li>
           <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
           <li><a href="#contact"  data-i18n="nav.contact">Contato</a></li>
         </ul>
 
         <div class="navbar__controls">
-          <button class="navbar__toggle" aria-label="Abrir menu">
-            <img src="assets/menu.svg" alt="" class="burguer" />
+          <button id="translate-toggle" class="lang-toggle" type="button" aria-label="Translate to English">EN</button>
+          <button class="navbar__toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span>
           </button>
-          <button
-            id="translate-toggle"
-            class="lang-toggle"
-            type="button"
-            aria-label="Traduzir para inglês"
-            title="EN / PT"
-          >EN</button>
         </div>
-
-        <!-- Mobile menu -->
-        <ul class="mobile__links" role="menu">
-          <li role="none"><a role="menuitem" href="#header"   data-i18n="nav.home">Início</a></li>
-          <li role="none"><a role="menuitem" href="#about"    data-i18n="nav.about">Sobre</a></li>
-          <li role="none"><a role="menuitem" href="#skills"   data-i18n="nav.skills">Habilidades</a></li>
-          <li role="none"><a role="menuitem" href="#projects" data-i18n="nav.projects">Projetos</a></li>
-          <li role="none"><a role="menuitem" href="#contact"  data-i18n="nav.contact">Contato</a></li>
-        </ul>
-
       </div>
+
+      <ul class="mobile__links">
+        <li><a href="#about"    data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#skills"   data-i18n="nav.skills">Competências</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+        <li><a href="#contact"  data-i18n="nav.contact">Contato</a></li>
+      </ul>
     </nav>
 
-    <!-- ===== Hero ===== -->
-    <header id="header" class="max-width hero">
+    <main id="top">
 
-      <div class="header__left" data-animate>
-        <p class="eyebrow" data-i18n="hero.eyebrow">Disponível para estágio/CLT • Remoto/Presencial</p>
-        <h1 data-i18n-html="hero.title">Olá! Sou o <span>Hallan</span>, Desenvolvedor Back-end.</h1>
-        <p class="lead" data-i18n="hero.lead">
-          Estudante de Engenharia de Software, focado em JavaScript, Python, C#, MongoDB, MySQL e com base
-          sólida em HTML e CSS. Busco oportunidade para transformar ideias em interfaces rápidas, acessíveis e responsivas.
-        </p>
-        <div class="cta-row">
-          <a href="assets/curriculo.pdf" class="btn btn-primary" download data-i18n="hero.download">Baixar currículo</a>
-          <a href="#projects" class="btn btn-ghost" data-i18n="hero.viewProjects">Ver projetos</a>
-        </div>
-        <ul class="social">
-          <li>
-            <a href="https://www.instagram.com/hallanrauber_/" target="_blank" rel="noopener" aria-label="Instagram">
-              <img src="assets/instagram.svg" alt="" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/hallan-rauber-sbardelatti-2aa631304/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <img src="assets/linkedin.svg" alt="" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/hallan.sbardelatti.3/" target="_blank" rel="noopener" aria-label="Facebook">
-              <img src="assets/facebook.svg" alt="" />
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="header__right" data-animate data-delay="2">
-        <div class="header__image">
-          <img
-            src="assets/Hallan.jpeg"
-            alt="Foto de Hallan Rauber Sbardelatti"
-            class="hallan"
-            data-i18n-attr-alt="hero.photoAlt"
-          />
-          <img src="assets/abstract.svg" alt="" aria-hidden="true" class="background" />
-        </div>
-      </div>
-
-    </header>
-
-    <!-- ===== Sobre ===== -->
-    <section id="about" class="about max-width">
-
-      <div class="about__left" data-animate>
-        <h2 class="secondary-title" data-i18n="about.title">Sobre mim</h2>
-        <div class="accent-line"></div>
-        <p data-i18n-html="about.p1">
-          Sou apaixonado por tecnologia e por criar interfaces limpas e fáceis de usar. Tenho estudado profundamente
-          <strong>JavaScript, Python, C#, MongoDB, MySQL</strong> e fundamentos de <strong>UI/UX</strong>, além de
-          experiência acadêmica com <strong>C#</strong> e <strong>C++</strong>.
-        </p>
-        <p data-i18n="about.p2">
-          Procuro uma oportunidade para evoluir no mercado, contribuir com o time e aprender com profissionais experientes.
-        </p>
-        <ul class="about__bullets">
-          <li data-i18n="about.b1">Foco: Full-stack (HTML, CSS, JavaScript, Python, C#, MongoDB, MySQL)</li>
-          <li data-i18n="about.b2">Interesse: performance, acessibilidade e boas práticas</li>
-          <li data-i18n="about.b3">Disponibilidade: imediato</li>
-        </ul>
-      </div>
-
-      <div class="about__right" data-animate data-delay="1">
-        <div class="card highlight">
-          <h3 class="tertiary-title" data-i18n="about.deliverTitle">O que entrego</h3>
-          <ul class="checklist">
-            <li data-i18n="about.d1">Layouts responsivos e pixel-perfect</li>
-            <li data-i18n="about.d2">Código organizado e semântico</li>
-            <li data-i18n="about.d3">Boas práticas de acessibilidade (ARIA, contraste, teclado)</li>
-            <li data-i18n="about.d4">Colaboração e aprendizado contínuo</li>
-            <li data-i18n="about.d5">HTML, CSS, JavaScript</li>
-            <li data-i18n="about.d6">Python, C#, Java</li>
-            <li data-i18n="about.d7">MongoDB, MySQL</li>
-          </ul>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ===== Habilidades ===== -->
-    <section id="skills" class="skills">
-      <div class="skills__content max-width">
-        <h2 class="secondary-title" data-i18n="skills.title">Habilidades</h2>
-        <div class="accent-line"></div>
-        <p class="description" data-i18n="skills.desc">Tecnologias e conceitos que utilizo no dia a dia de estudos e projetos.</p>
-
-        <ul class="skills__grid">
-
-          <li class="skills__item" data-animate>
-            <div class="image-container">
-              <img src="assets/notebook.png" alt="Desenvolvimento Web" data-i18n-attr-alt="skills.webAlt" />
-            </div>
-            <h3 data-i18n="skills.webTitle">Desenvolvimento Web</h3>
-            <p data-i18n="skills.webText">HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+), Python, C#, MongoDB, MySQL</p>
-            <div class="badges">
-              <span class="badge" data-i18n="skills.bSem">Semântica</span>
-              <span class="badge" data-i18n="skills.bResp">Responsividade</span>
-              <span class="badge" data-i18n="skills.bA11y">A11y</span>
-            </div>
-          </li>
-
-          <li class="skills__item" data-animate data-delay="1">
-            <div class="image-container">
-              <img src="assets/colors.png" alt="Web Design" data-i18n-attr-alt="skills.designAlt" />
-            </div>
-            <h3 data-i18n="skills.designTitle">Web Design</h3>
-            <p data-i18n="skills.designText">Criação de interfaces com foco em UX e tipografia.</p>
-            <div class="badges">
-              <span class="badge" data-i18n="skills.bWire">Wireframes</span>
-              <span class="badge" data-i18n="skills.bUIP">UI Patterns</span>
-            </div>
-          </li>
-
-          <li class="skills__item" data-animate data-delay="2">
-            <div class="image-container">
-              <img src="assets/phone.png" alt="UX/UI Design" data-i18n-attr-alt="skills.uxAlt" />
-            </div>
-            <h3 data-i18n="skills.uxTitle">Fundamentos de UX/UI</h3>
-            <p data-i18n="skills.uxText">Arquitetura da informação e hierarquia visual.</p>
-            <div class="badges">
-              <span class="badge" data-i18n="skills.bProto">Prototipagem</span>
-              <span class="badge" data-i18n="skills.bFeedback">Feedback</span>
-            </div>
-          </li>
-
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===== Projetos ===== -->
-    <section id="projects" class="projects max-width">
-      <div class="projects__content" data-animate>
-        <h2 class="secondary-title" data-i18n="projects.title">Projetos em destaque</h2>
-        <div class="accent-line"></div>
-      </div>
-
-      <div class="projects__grid">
-
-        <article class="projeto-card" data-animate data-delay="1">
-          <div class="projeto-card__img-wrap">
-            <img
-              src="assets/SiteFerber.jpeg"
-              alt="Página inicial do site Ferber Automação"
-              loading="lazy"
-              data-i18n-attr-alt="projects.p1.alt"
-            />
-          </div>
-          <div class="projeto-conteudo">
-            <h3 data-i18n="projects.p1.title">Site — Ferber Automação</h3>
-            <p data-i18n-html="projects.p1.text">
-              Website institucional desenvolvido com <strong>HTML</strong>, <strong>CSS</strong> e
-              <strong>JavaScript</strong> puro.
+      <!-- ===== Hero ===== -->
+      <header class="hero">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <p class="hero__role reveal">
+              <span class="prompt">$</span>
+              <span data-i18n="hero.prefix">trabalho com</span>
+              <span class="typed" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span>
             </p>
-            <div class="stack">
-              <span class="badge">HTML</span>
-              <span class="badge">CSS</span>
-              <span class="badge">JavaScript</span>
+            <h1 class="reveal" style="--d: 1">Hallan Rauber <span class="grad">Sbardelatti</span></h1>
+            <p class="hero__lead reveal" style="--d: 2" data-i18n="hero.lead">
+              Trabalho com Python no dia a dia para automatizar tarefas e tratar dados, atuo no suporte técnico
+              resolvendo chamados de N1 e parte de N2, e venho construindo base em DevOps e análise de dados.
+              Estudante de Engenharia de Software.
+            </p>
+            <div class="hero__actions reveal" style="--d: 3">
+              <a href="assets/curriculo.pdf" class="btn btn--primary" download data-i18n="hero.cv">Baixar currículo</a>
+              <a href="https://www.linkedin.com/in/hallan-rauber-sbardelatti-2aa631304/" class="btn" target="_blank" rel="noopener">LinkedIn ↗</a>
             </div>
-            <a
-              href="https://www.ferberautomacao.com.br"
-              class="btn-saiba-mais"
-              target="_blank"
-              rel="noopener"
-              data-i18n="projects.visit"
-            >Visitar →</a>
           </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ===== Contato ===== -->
-    <footer id="contact" class="footer">
-      <section class="contact max-width">
-
-        <h2 class="secondary-title mb-s" data-i18n="contact.title">Entre em contato</h2>
-        <div class="accent-line"></div>
-        <p class="mb-m" data-i18n="contact.subtitle">
-          Vamos conversar sobre como posso ajudar seu time. Respondo com rapidez.
-        </p>
-
-        <form id="contact-form" class="contact__form" novalidate data-animate>
-          <div class="field">
-            <label for="name" data-i18n="contact.name">Nome *</label>
-            <input type="text" id="name" name="name" autocomplete="name" required />
-            <small class="error" aria-live="polite"></small>
+          <div class="hero__photo-wrap reveal" style="--d: 2">
+            <img src="assets/Hallan.jpeg" alt="Foto de Hallan Rauber Sbardelatti" class="hero__photo" data-i18n-attr-alt="hero.photoAlt" />
           </div>
-          <div class="field">
-            <label for="email" data-i18n="contact.email">E-mail *</label>
-            <input type="email" id="email" name="email" autocomplete="email" required />
-            <small class="error" aria-live="polite"></small>
-          </div>
-          <div class="field">
-            <label for="message" data-i18n="contact.message">Mensagem *</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <small class="error" aria-live="polite"></small>
-          </div>
-          <button type="submit" class="btn btn-primary" data-i18n="contact.send">Enviar</button>
-          <p id="form-message" role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="footer__content max-width mb-0">
-          <div class="footer__contact mb-m">
-            <a href="mailto:hallansbardelatti@gmail.com">hallansbardelatti@gmail.com</a>
-            <span>•</span>
-            <a href="tel:+554797830693">+55 (47) 9783-0693</a>
-          </div>
-          <ul class="social">
-            <li>
-              <a href="https://www.instagram.com/hallanrauber_/" target="_blank" rel="noopener" aria-label="Instagram">
-                <img src="assets/instagram.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/hallan-rauber-sbardelatti-2aa631304/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <img src="assets/linkedin.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/hallan.sbardelatti.3/" target="_blank" rel="noopener" aria-label="Facebook">
-                <img src="assets/facebook.svg" alt="" />
-              </a>
-            </li>
-          </ul>
-          <p class="copyright">© <span id="year"></span> Hallan R. Sbardelatti</p>
         </div>
+      </header>
 
+      <!-- ===== Sobre ===== -->
+      <section id="about" class="container section">
+        <h2 class="section__label reveal"><span class="num">01</span><span data-i18n="about.title">Sobre</span></h2>
+        <div class="section__body">
+          <p class="reveal" data-i18n="about.p1">
+            Meu ponto mais forte hoje é Python: escrevo scripts de automação, integrações com APIs e rotinas de
+            tratamento de dados. Na operação, atendo usuários em primeiro nível, faço diagnóstico e triagem de
+            incidentes e já resolvo parte dos casos de segundo nível.
+          </p>
+          <p class="reveal" style="--d: 1" data-i18n="about.p2">
+            Paralelamente, estou consolidando a base em DevOps (Linux, Docker, Git e pipelines de CI/CD) e em
+            análise de dados (SQL, pandas e visualização), com o objetivo de unir suporte, automação e
+            infraestrutura.
+          </p>
+        </div>
       </section>
+
+      <!-- ===== Competências ===== -->
+      <section id="skills" class="container section">
+        <h2 class="section__label reveal"><span class="num">02</span><span data-i18n="skills.title">Competências</span></h2>
+        <div class="section__body">
+          <ul class="skill-grid">
+
+            <li class="card skill reveal" style="--c: #3b82f6; --lvl: 65%">
+              <div class="skill__head">
+                <span class="skill__icon" aria-hidden="true">&gt;_</span>
+                <h3>Python</h3>
+                <span class="level" data-i18n="level.mid">Intermediário</span>
+              </div>
+              <div class="bar" aria-hidden="true"><span></span></div>
+              <p data-i18n="skills.py">Scripts de automação, criação de APIs REST com FastAPI, consumo de APIs externas e tratamento de dados.</p>
+              <p class="tools">FastAPI · pandas · requests · venv/pip</p>
+            </li>
+
+            <li class="card skill reveal" style="--d: 1; --c: #10b981; --lvl: 60%">
+              <div class="skill__head">
+                <span class="skill__icon" aria-hidden="true">?!</span>
+                <h3 data-i18n="skills.supportTitle">Suporte Técnico</h3>
+                <span class="level" data-i18n="level.support">N1 · base em N2</span>
+              </div>
+              <div class="bar" aria-hidden="true"><span></span></div>
+              <p data-i18n="skills.support">Atendimento ao usuário, abertura e gestão de chamados, diagnóstico de incidentes, análise de logs e escalonamento com contexto.</p>
+              <p class="tools">Jira · Windows · Linux · Redes (básico)</p>
+            </li>
+
+            <li class="card skill reveal" style="--c: #f59e0b; --lvl: 35%">
+              <div class="skill__head">
+                <span class="skill__icon" aria-hidden="true">{ }</span>
+                <h3>DevOps</h3>
+                <span class="level" data-i18n="level.base">Base</span>
+              </div>
+              <div class="bar" aria-hidden="true"><span></span></div>
+              <p data-i18n="skills.devops">Linha de comando Linux, versionamento, containers e noções de integração e entrega contínua.</p>
+              <p class="tools">Linux · Git · Docker · CI/CD</p>
+            </li>
+
+            <li class="card skill reveal" style="--d: 1; --c: #a855f7; --lvl: 35%">
+              <div class="skill__head">
+                <span class="skill__icon" aria-hidden="true">%</span>
+                <h3 data-i18n="skills.dataTitle">Análise de Dados</h3>
+                <span class="level" data-i18n="level.base">Base</span>
+              </div>
+              <div class="bar" aria-hidden="true"><span></span></div>
+              <p data-i18n="skills.data">Consultas SQL, limpeza e agregação de dados e construção de relatórios simples.</p>
+              <p class="tools">SQL · pandas · Excel</p>
+            </li>
+
+          </ul>
+
+          <div class="other reveal">
+            <h3 data-i18n="skills.otherTitle">Outras tecnologias</h3>
+            <ul class="chips">
+              <li>JavaScript</li><li>HTML/CSS</li><li>C#</li><li>MySQL</li><li>MongoDB</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Projetos ===== -->
+      <section id="projects" class="container section">
+        <h2 class="section__label reveal"><span class="num">03</span><span data-i18n="projects.title">Projetos</span></h2>
+        <div class="section__body">
+          <a href="https://www.ferberautomacao.com.br" class="card project reveal" target="_blank" rel="noopener">
+            <div class="project__img">
+              <img src="assets/SiteFerber.jpeg" alt="Página inicial do site Ferber Automação" loading="lazy" data-i18n-attr-alt="projects.p1.alt" />
+            </div>
+            <div>
+              <h3>Ferber Automação</h3>
+              <p data-i18n="projects.p1.text">Site institucional desenvolvido do zero, com layout responsivo.</p>
+              <p class="tools">HTML · CSS · JavaScript</p>
+              <span class="link" data-i18n="projects.visit">Ver site ↗</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ===== Formação ===== -->
+      <section id="education" class="container section">
+        <h2 class="section__label reveal"><span class="num">04</span><span data-i18n="edu.title">Formação</span></h2>
+        <div class="section__body">
+          <div class="card edu reveal">
+            <h3 data-i18n="edu.course">Engenharia de Software 6/8</h3>
+            <span class="status"><span class="dot"></span><span data-i18n="edu.status">Em andamento</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Contato ===== -->
+      <section id="contact" class="container section">
+        <h2 class="section__label reveal"><span class="num">05</span><span data-i18n="contact.title">Contato</span></h2>
+        <div class="section__body">
+          <ul class="contact-list reveal">
+            <li><span class="muted">E-mail</span><a href="mailto:hallansbardelatti@gmail.com">hallansbardelatti@gmail.com</a></li>
+            <li><span class="muted" data-i18n="contact.phone">Telefone</span><a href="tel:+554797830693">+55 (47) 9783-0693</a></li>
+            <li><span class="muted">LinkedIn</span><a href="https://www.linkedin.com/in/hallan-rauber-sbardelatti-2aa631304/" target="_blank" rel="noopener">hallan-rauber-sbardelatti ↗</a></li>
+          </ul>
+
+          <form id="contact-form" class="card form reveal" style="--d: 1" novalidate>
+            <div class="form__row">
+              <label>
+                <span data-i18n="contact.name">Nome</span>
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                <span>E-mail</span>
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+            </div>
+            <label>
+              <span data-i18n="contact.message">Mensagem</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <div class="form__footer">
+              <button type="submit" class="btn btn--primary" data-i18n="contact.send">Enviar mensagem</button>
+              <p id="form-message" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="container footer">
+      <p>© <span id="year"></span> Hallan Rauber Sbardelatti</p>
+      <a href="#top" class="to-top" data-i18n="footer.top">Voltar ao topo ↑</a>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="scripts/index.js" defer></script>
     <script src="scripts/i18n.js" defer></script>
+    <script src="scripts/index.js" defer></script>
   </body>
 </html>

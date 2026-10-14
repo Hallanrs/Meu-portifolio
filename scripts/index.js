@@ -1,23 +1,19 @@
-/* ============================================================
-   MAIN SCRIPT
-   ============================================================ */
-/* global emailjs */
+/* global emailjs, t */
 
-// ===== Navbar: is-stuck class on scroll =====
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ===== Navbar: borda + barra de progresso de leitura =====
 const navbar = document.querySelector('.navbar');
 
 const onScroll = () => {
-  if (window.scrollY > 8) {
-    navbar.classList.add('is-stuck', 'scrolled');
-  } else {
-    navbar.classList.remove('is-stuck', 'scrolled');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 8);
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  navbar.style.setProperty('--p', max > 0 ? window.scrollY / max : 0);
 };
-
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
-// ===== Mobile menu toggle =====
+// ===== Menu mobile =====
 const toggleBtn  = document.querySelector('.navbar__toggle');
 const mobileMenu = document.querySelector('.mobile__links');
 
@@ -26,7 +22,6 @@ toggleBtn?.addEventListener('click', () => {
   toggleBtn.setAttribute('aria-expanded', isOpen);
 });
 
-// Close menu when a link is clicked
 mobileMenu?.querySelectorAll('a').forEach(a =>
   a.addEventListener('click', () => {
     mobileMenu.classList.remove('show');
@@ -34,61 +29,115 @@ mobileMenu?.querySelectorAll('a').forEach(a =>
   })
 );
 
-// ===== Scroll animations via IntersectionObserver =====
-const animObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        animObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+// ===== Elementos sobem ao entrar na tela =====
+const revealObserver = new IntersectionObserver(
+  entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  }),
+  { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===== Link ativo no menu conforme a seção visível =====
+const navLinks = document.querySelectorAll('.navbar__links a');
+
+const sectionObserver = new IntersectionObserver(
+  entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
+  }),
+  { rootMargin: '-45% 0px -50% 0px' }
+);
+document.querySelectorAll('main section[id]').forEach(s => sectionObserver.observe(s));
+
+// ===== Brilho do card seguindo o mouse =====
+document.querySelectorAll('.card').forEach(card =>
+  card.addEventListener('pointermove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+    card.style.setProperty('--my', `${e.clientY - r.top}px`);
+  })
 );
 
-document.querySelectorAll('[data-animate]').forEach(el => animObserver.observe(el));
+// ===== Efeito de digitação no topo =====
+const typedEl = document.querySelector('.typed');
 
-// ===== Contact form + EmailJS =====
-document.addEventListener('DOMContentLoaded', () => {
-  emailjs.init('swkcuBg_POf9M-t-S');
+if (typedEl) {
+  const words = () => t('hero.words').split('|');
 
-  const form   = document.getElementById('contact-form');
-  const status = document.getElementById('form-message');
+  if (reduceMotion) {
+    typedEl.textContent = words()[0];
+  } else {
+    let wordIdx = 0;
+    let charIdx = 0;
+    let deleting = false;
 
-  const showMsg = (text, ok = true) => {
-    status.textContent = text;
-    status.style.color = ok ? '#10b981' : '#f87171';
-  };
+    const tick = () => {
+      const list = words();
+      const word = list[wordIdx % list.length];
 
-  form?.addEventListener('submit', async e => {
-    e.preventDefault();
-    const { name, email, message } = e.target;
+      charIdx += deleting ? -1 : 1;
+      typedEl.textContent = word.slice(0, charIdx);
 
-    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
-      showMsg('Preencha todos os campos obrigatórios.', false);
-      return;
-    }
-    if (!/^\S+@\S+\.\S+$/.test(email.value)) {
-      showMsg('E-mail inválido.', false);
-      return;
-    }
+      let delay = deleting ? 45 : 90;
+      if (!deleting && charIdx === word.length) {
+        deleting = true;
+        delay = 1600;
+      } else if (deleting && charIdx === 0) {
+        deleting = false;
+        wordIdx++;
+        delay = 350;
+      }
+      setTimeout(tick, delay);
+    };
+    setTimeout(tick, 600);
+  }
+}
 
-    try {
-      await emailjs.send('service_u9h1x9b', 'template_lojlrtw', {
-        name:    name.value,
-        email:   email.value,
-        message: message.value,
-      });
-      showMsg('Mensagem enviada com sucesso!');
-      form.reset();
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      showMsg('Erro ao enviar mensagem. Tente novamente.', false);
-    }
-  });
+// ===== Formulário de contato (EmailJS) =====
+emailjs.init('swkcuBg_POf9M-t-S');
 
-  // Copyright year
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+const form    = document.getElementById('contact-form');
+const status  = document.getElementById('form-message');
+const sendBtn = form?.querySelector('button[type="submit"]');
+
+const showMsg = (key, ok = true) => {
+  status.textContent = t(key);
+  status.style.color = ok ? '#16a34a' : '#dc2626';
+};
+
+form?.addEventListener('submit', async e => {
+  e.preventDefault();
+  const { name, email, message } = e.target;
+
+  if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+    showMsg('form.required', false);
+    return;
+  }
+  if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+    showMsg('form.invalidEmail', false);
+    return;
+  }
+
+  sendBtn.disabled = true;
+  sendBtn.textContent = t('form.sending');
+
+  try {
+    await emailjs.send('service_u9h1x9b', 'template_lojlrtw', {
+      name:    name.value,
+      email:   email.value,
+      message: message.value,
+    });
+    showMsg('form.sent');
+    form.reset();
+  } catch (err) {
+    console.error('EmailJS error:', err);
+    showMsg('form.error', false);
+  } finally {
+    sendBtn.disabled = false;
+    sendBtn.textContent = t('contact.send');
+  }
 });
